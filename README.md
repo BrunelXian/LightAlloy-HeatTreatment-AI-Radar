@@ -50,12 +50,6 @@ Transform:
 Papers → Structured Knowledge → Modelling → Optimisation
 ```
 
-Instead of:
-
-```
-Papers → PDFs → Forgotten
-```
-
 ---
 
 ## ⚙️ System Architecture
