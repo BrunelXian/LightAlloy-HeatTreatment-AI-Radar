@@ -1,200 +1,112 @@
-# 🔥 LightAlloy-HeatTreatment-AI-Radar
+# LightAlloy-HeatTreatment-AI-Radar
 
-> A structured intelligence system for AI/ML-driven heat treatment of light alloys.
+[![Project Type](https://img.shields.io/badge/project-research%20radar-blue)](#)
+[![Focus](https://img.shields.io/badge/focus-AI%20for%20Manufacturing-important)](#)
+[![Scope](https://img.shields.io/badge/scope-processes%2C%20control%2C%20digital%20twin-success)](#)
+[![Status](https://img.shields.io/badge/status-active%20development-orange)](#)
 
----
+> A structured research radar for AI/ML-driven heat treatment of aluminium and light alloys.
 
-## 🚀 Project Overview
+[中文说明](README_CN.MD)
 
-**HeatTreatment-AI-Radar** is NOT a simple paper collection.
+## What This Project Is
 
-It is a **continuous, structured knowledge system** designed to:
+`LightAlloy-HeatTreatment-AI-Radar` is a continuously evolving intelligence system for tracking, structuring, and reusing research knowledge in AI/ML-assisted heat treatment of light alloys.
 
-* Track research progress in **AI/ML for heat treatment**
-* Organize knowledge into **process–microstructure–property relationships**
-* Build a **data and modelling foundation** for future:
+It is not just a paper list. The long-term goal is to transform fragmented literature into structured knowledge that supports modelling, process optimisation, and future closed-loop control.
 
-  * Physics-informed machine learning
-  * Surrogate modelling
-  * Process optimisation
-  * Closed-loop control
-
----
-
-## 🎯 Motivation
-
-Heat treatment of aluminium and light alloys is:
-
-* Industrially critical
-* Data-rich but **poorly structured**
-* Traditionally driven by **experience-based rules**
-
-Meanwhile:
-
-* AI/ML research is **fragmented**
-* No unified system exists to connect:
-
-  * process parameters
-  * material behaviour
-  * predictive models
-
-👉 This project aims to fill that gap.
-
----
-
-## 🧠 Core Idea
-
-Transform:
-
-```
-Papers → Structured Knowledge → Modelling → Optimisation
+```text
+Papers -> Structured Knowledge -> Modelling -> Optimisation
 ```
 
----
+## Why It Matters
 
-## ⚙️ System Architecture
+Heat treatment of aluminium and light alloys is industrially important, data-rich, and still heavily dependent on experience-based rules. Meanwhile, AI/ML studies in this area are scattered across materials science, manufacturing, modelling, and control.
 
-### 1. Data Pipeline
+This project aims to connect:
 
-* Automated paper collection (arXiv / Scholar)
-* Metadata extraction
-* Filtering & screening
-* Structured storage
+- heat-treatment processes
+- alloy systems and microstructure evolution
+- mechanical properties
+- machine learning and physics-informed models
+- optimisation and digital twin workflows
 
----
+## System Modules
 
-### 2. Knowledge Structuring
+| Module | Purpose |
+| --- | --- |
+| Data pipeline | Collect papers, extract metadata, screen relevance, and store structured records. |
+| Knowledge structuring | Decompose papers into process, material, property, method, and dataset information. |
+| Research outputs | Generate digests, reference notes, review-ready summaries, and curated datasets. |
+| Modelling foundation | Prepare data and baselines for ML, surrogate modelling, and physics-informed learning. |
+| Optimisation layer | Support process optimisation, uncertainty-aware prediction, and future closed-loop control. |
 
-Each paper is decomposed into:
+## Knowledge Schema
 
-* **Process**
+Each paper is expected to be organized around:
 
-  * Solution treatment
-  * Ageing
-  * Quenching
+- **Process**: solution treatment, ageing, quenching, deformation, thermomechanical routes
+- **Material**: alloy system, composition, initial condition, processing history
+- **Target**: hardness, strength, elongation, microstructure, precipitation behaviour
+- **Method**: ML model, physics-informed model, surrogate model, optimisation algorithm
+- **Data**: dataset source, feature variables, target variables, evaluation metrics
 
-* **Material**
+## Repository Structure
 
-  * Alloy system (e.g., Al6061, Al7075)
+```text
+LightAlloy-HeatTreatment-AI-Radar/
+  data/
+    raw_papers.json
+    screened_papers.json
+    curated_papers.json
 
-* **Target**
+  refs/
+    aluminium_alloys.md
+    heat_treatment_process.md
+    ml_models.md
+    physics_informed_ml.md
 
-  * Hardness
-  * Yield strength
-  * Microstructure
+  scripts/
+    paper_scanner.py
+    paper_screener.py
+    tag_assigner.py
+    summary_generator.py
 
-* **Method**
+  outputs/
+    daily_digest.md
+    weekly_summary.md
 
-  * ML model type
-  * Physics-informed approach
+  review/
+    outline.md
+    sections/
 
----
-
-### 3. Output Layer
-
-* Daily / weekly research digest
-* Structured references
-* Review-ready content
-* Dataset for ML modelling
-
----
-
-## 📂 Repository Structure
-
-```bash
-HeatTreatment-AI-Radar/
-│
-├── data/
-│   ├── raw_papers.json          # All collected papers
-│   ├── screened_papers.json     # Filtered relevant papers
-│   ├── curated_papers.json      # Structured & annotated dataset
-│
-├── refs/
-│   ├── aluminium_alloys.md
-│   ├── heat_treatment_process.md
-│   ├── ml_models.md
-│   ├── physics_informed_ml.md
-│
-├── scripts/
-│   ├── paper_scanner.py         # Collect papers
-│   ├── paper_screener.py        # Filter relevance
-│   ├── tag_assigner.py          # Add structured tags
-│   ├── summary_generator.py     # Generate summaries
-│
-├── outputs/
-│   ├── daily_digest.md
-│   ├── weekly_summary.md
-│
-├── review/
-│   ├── outline.md
-│   ├── sections/                # Draft review paper
-│
-├── README.md
+  README.md
+  README_CN.MD
 ```
 
----
+## Research Questions
 
-## 🧩 Key Research Questions
+1. What has already been solved in heat-treatment ML?
+2. What are the main data bottlenecks in this field?
+3. Where does physics-informed ML outperform pure data-driven ML?
+4. How can reliable surrogate models be built for heat-treatment process-property prediction?
+5. How can uncertainty-aware prediction be introduced?
+6. How can the field move toward process optimisation and closed-loop control?
 
-This project is designed to answer:
+## Roadmap
 
-1. What has been solved in **heat treatment ML**?
-2. What are the **data bottlenecks**?
-3. Where does **physics-informed ML outperform pure ML**?
-4. How can we build:
+- Build a structured paper collection and screening workflow.
+- Create curated metadata and tagging standards.
+- Generate daily or weekly research digests.
+- Prepare review-ready summaries and reference notes.
+- Build ML-ready datasets for process-property modelling.
+- Explore physics-informed ML and surrogate modelling.
+- Move toward RL-based optimisation and digital twin integration.
 
-   * reliable surrogate models
-   * uncertainty-aware predictions
-5. How to move towards:
+## Status
 
-   * **process optimisation**
-   * **closed-loop control**
+This repository is under active development. Daily or weekly research updates are planned.
 
----
-
-## 🔬 Future Directions
-
-This repository will evolve into:
-
-* 📊 A structured dataset for modelling
-* 🤖 A baseline ML framework for heat treatment
-* 🔁 A stepping stone towards:
-
-  * RL-based optimisation
-  * Digital twin integration
-
----
-
-## ⚠️ Important Note
-
-This is NOT:
-
-* A static literature list
-* A PDF storage repository
-
-This is:
-
-> **An evolving intelligence system for AI-driven materials processing.**
-
----
-
-## 👤 Author
+## Author
 
 Xian
-
----
-
-## 📌 Status
-
-🚧 Under active development
-📅 Daily/weekly updates planned
-
----
-
-## ⭐ If you find this useful
-
-Consider starring the repo and following updates.
-
-
-
-Good luck to me
