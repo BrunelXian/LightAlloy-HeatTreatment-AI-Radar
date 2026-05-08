@@ -125,3 +125,16 @@ def test_precision_filter_rejects_generic_ml_without_aluminium_context():
     }
 
     assert not passes_precision_filter(paper)
+
+
+def test_precision_filter_does_not_use_query_keywords():
+    paper = {
+        "title": "A generic course recommendation system",
+        "abstract": "This paper studies recommendation ranking for online education.",
+        "venue": "Journal of Educational Data Mining",
+        "query": '"aluminum alloy" "heat treatment" "machine learning"',
+        "query_group": "crossref_high_precision",
+        "query_mode": "crossref_query",
+    }
+
+    assert not passes_precision_filter(paper)

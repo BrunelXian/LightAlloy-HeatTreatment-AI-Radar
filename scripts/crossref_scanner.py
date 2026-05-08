@@ -130,7 +130,6 @@ def precision_filter_text(paper):
             as_text(paper.get("title", "")),
             as_text(paper.get("abstract", "")),
             as_text(paper.get("venue", "")),
-            as_text(paper.get("query", "")),
         ]
     )
 
