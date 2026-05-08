@@ -1,1 +1,355 @@
-[]
+[
+  {
+    "paper_id": "d070a20cf306e912",
+    "title": "Additively manufacturable high-strength aluminum alloys with thermally stable microstructures enabled by hybrid machine learning-based design",
+    "authors": [
+      "S. Mohadeseh Taheri-Mousavi",
+      "Michael Xu",
+      "Florian Hengsbach",
+      "Clay Houser",
+      "Zhaoxuan Ge",
+      "Benjamin Glaser",
+      "Shaolou Wei",
+      "Mikro Schaper",
+      "James M. LeBeau",
+      "Greg B. Olson",
+      "A. John Hart"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "10.1002/adma.202509507",
+    "arxiv_id": "2406.17457v2",
+    "url": "http://arxiv.org/abs/2406.17457v2",
+    "abstract": "Additively manufactured (AM) aluminum alloys with high strength and thermal stability have broad applications in turbine engines, vacuum pumps, heat exchangers, and many other industrial systems. Employing precipitates with an L1$_2$ structure to block dislocation motions is a widespread strategy to strengthen aluminum. However, to achieve high strength, a high volume fraction of small precipitates is required, and these characteristics are generally mutually exclusive. Here, we show that for certain compositions of Al alloys, L1$_2$ phases initially precipitate as sub-micron metastable ternary phases under the rapid solidification conditions of powder bed AM, yet the subsequent L1$_2$ phases that precipitate during heat treatment of the sample remain at the nanoscale, imparting high strength. For strength to be retained at elevated temperature, these nanoprecipitates must have low coarsening rates. To inversely design the composition of an alloy to have these target microstructural features, we used hybrid calculation of phase diagram (CALPHAD)-based integrated computational materials engineering (ICME) and Bayesian optimization techniques. We tested our approach by designing an Al-Er-Zr-Y-Yb-Ni model alloy, and the selected composition was manufactured in powder form as AM feedstock. The strength of specimens manufactured via laser powder bed fusion (LPBF) from the designed composition is comparable to that of wrought Al 7075, yet without cracking that occurs upon LPBF of Al 7075. After high-temperature (400$^\\circ$C) aging the designed alloy is 50% stronger than the strongest known benchmark printable Al alloy.",
+    "source": "arXiv",
+    "published_date": "2024-06-25T10:53:11Z",
+    "updated_date": "2025-01-19T19:15:31Z",
+    "query_group": "arxiv_advanced",
+    "query": "(ti:aluminium OR abs:aluminium OR ti:aluminum OR abs:aluminum) AND (ti:alloy OR abs:alloy) AND (ti:\"heat treatment\" OR abs:\"heat treatment\" OR ti:ageing OR abs:ageing OR ti:aging OR abs:aging OR ti:precipitation OR abs:precipitation OR ti:quenching OR abs:quenching) AND (ti:\"machine learning\" OR abs:\"machine learning\" OR ti:\"neural network\" OR abs:\"neural network\" OR ti:\"deep learning\" OR abs:\"deep learning\" OR ti:\"surrogate model\" OR abs:\"surrogate model\")",
+    "query_mode": "arxiv_advanced",
+    "query_source_quality": "high",
+    "keywords": [],
+    "alloy_system": [
+      "Aluminium alloy",
+      "Al-Zn-Mg-Cu"
+    ],
+    "heat_treatment_process": [],
+    "property_target": [],
+    "ml_method": [
+      "Bayesian optimisation"
+    ],
+    "research_position": [],
+    "relevance_score": 19,
+    "screening_decision": "CORE",
+    "screening_reason": "positive: aluminum, alloy, heat treatment, aging, machine learning, optimization",
+    "matched_positive_keywords": [
+      "aluminum",
+      "alloy",
+      "heat treatment",
+      "aging",
+      "machine learning",
+      "optimization"
+    ],
+    "matched_negative_keywords": [],
+    "summary_short": "",
+    "manual_status": "core",
+    "manual_notes": "Must-read paper for heat-treatment ML review.",
+    "curation_date": "2026-05-08"
+  },
+  {
+    "paper_id": "43b5af7e4af9efab",
+    "title": "DSC curve fingerprints directly encode mechanical properties of aluminum alloys",
+    "authors": [
+      "Lukas Pichlmann",
+      "Samuel Studer",
+      "Aurel R. Arnoldt",
+      "Paul Oberhauser",
+      "Johannes A. Österreicher"
+    ],
+    "year": 2026,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2603.19905v1",
+    "url": "http://arxiv.org/abs/2603.19905v1",
+    "abstract": "Differential scanning calorimetry (DSC) is a standard tool for studying precipitation and phase transformations in aluminum alloys, yet its relation to mechanical performance has so far remained mostly indirect. Here, we demonstrate that DSC curves themselves act as fingerprints that directly encode mechanical properties. Four representative 6xxx series alloys (Al-Mg-Si) were subjected to different natural and artificial aging regimens, followed by DSC heat-flow measurements and tensile testing. Machine learning models trained on the thermograms predicted yield strength, ultimate tensile strength, and uniform elongation in five-fold grouped cross-validation, with the best model (Lasso) achieving R^2 values of 0.93, 0.86, and 0.87 and mean absolute errors of 14.3 MPa, 11.1 MPa, and 1.5 percent, respectively. Leave-one-alloy-out evaluation with sparse calibration using anchor samples further demonstrated generalization across alloy chemistries. While direct prediction on unseen alloy data degraded performance substantially, inclusion of as few as one to two anchor conditions from the target alloy recovered predictive accuracy, approaching that of the standard cross-validation. Feature importance analysis revealed that the 230 to 270 C region, associated with precipitation of the primary hardening phase beta'', contributed most strongly to predictive accuracy, providing direct mechanistic validation of the model. These findings establish DSC as a diagnostic tool that can serve as a rapid proxy for mechanical property evaluation, enabling accelerated alloy screening, process optimization, and integration of thermal analysis into data-driven manufacturing.",
+    "source": "arXiv",
+    "published_date": "2026-03-20T12:43:06Z",
+    "updated_date": "2026-03-20T12:43:06Z",
+    "query_group": "arxiv_advanced",
+    "query": "(ti:aluminium OR abs:aluminium OR ti:aluminum OR abs:aluminum) AND (ti:alloy OR abs:alloy) AND (ti:\"heat treatment\" OR abs:\"heat treatment\" OR ti:ageing OR abs:ageing OR ti:aging OR abs:aging OR ti:precipitation OR abs:precipitation OR ti:quenching OR abs:quenching) AND (ti:\"machine learning\" OR abs:\"machine learning\" OR ti:\"neural network\" OR abs:\"neural network\" OR ti:\"deep learning\" OR abs:\"deep learning\" OR ti:\"surrogate model\" OR abs:\"surrogate model\")",
+    "query_mode": "arxiv_advanced",
+    "query_source_quality": "high",
+    "keywords": [],
+    "alloy_system": [
+      "Aluminium alloy",
+      "Al-Mg-Si"
+    ],
+    "heat_treatment_process": [
+      "Artificial ageing"
+    ],
+    "property_target": [
+      "Tensile strength",
+      "Yield strength",
+      "Ductility"
+    ],
+    "ml_method": [],
+    "research_position": [
+      "Process optimisation"
+    ],
+    "relevance_score": 18,
+    "screening_decision": "CORE",
+    "screening_reason": "positive: aluminum, alloy, aging, precipitation, machine learning, optimization",
+    "matched_positive_keywords": [
+      "aluminum",
+      "alloy",
+      "aging",
+      "precipitation",
+      "machine learning",
+      "optimization"
+    ],
+    "matched_negative_keywords": [],
+    "summary_short": "",
+    "manual_status": "core",
+    "manual_notes": "Must-read paper for heat-treatment ML review.",
+    "curation_date": "2026-05-08"
+  },
+  {
+    "paper_id": "d56382d59f9416f4",
+    "title": "Hardness prediction of age-hardening aluminum alloy based on ensemble learning",
+    "authors": [
+      "Houchen Zuo",
+      "Yongquan Jiang",
+      "Yan Yang",
+      "Baoying Liu",
+      "Jie Hu"
+    ],
+    "year": 2022,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2206.08011v1",
+    "url": "http://arxiv.org/abs/2206.08011v1",
+    "abstract": "With the rapid development of artificial intelligence, the combination of material database and machine learning has driven the progress of material informatics. Because aluminum alloy is widely used in many fields, so it is significant to predict the properties of aluminum alloy. In this thesis, the data of Al-Cu-Mg-X (X: Zn, Zr, etc.) alloy are used to input the composition, aging conditions (time and temperature) and predict its hardness. An ensemble learning solution based on automatic machine learning and an attention mechanism introduced into the secondary learner of deep neural network are proposed respectively. The experimental results show that selecting the correct secondary learner can further improve the prediction accuracy of the model. This manuscript introduces the attention mechanism to improve the secondary learner based on deep neural network, and obtains a fusion model with better performance. The R-Square of the best model is 0.9697 and the MAE is 3.4518HV.",
+    "source": "arXiv",
+    "published_date": "2022-06-16T09:14:26Z",
+    "updated_date": "2022-06-16T09:14:26Z",
+    "query_group": "arxiv_advanced",
+    "query": "(ti:aluminium OR abs:aluminium OR ti:aluminum OR abs:aluminum) AND (ti:alloy OR abs:alloy) AND (ti:\"heat treatment\" OR abs:\"heat treatment\" OR ti:ageing OR abs:ageing OR ti:aging OR abs:aging OR ti:precipitation OR abs:precipitation OR ti:quenching OR abs:quenching) AND (ti:\"machine learning\" OR abs:\"machine learning\" OR ti:\"neural network\" OR abs:\"neural network\" OR ti:\"deep learning\" OR abs:\"deep learning\" OR ti:\"surrogate model\" OR abs:\"surrogate model\")",
+    "query_mode": "arxiv_advanced",
+    "query_source_quality": "high",
+    "keywords": [],
+    "alloy_system": [
+      "Aluminium alloy",
+      "Al-Cu"
+    ],
+    "heat_treatment_process": [],
+    "property_target": [
+      "Hardness"
+    ],
+    "ml_method": [
+      "Neural network"
+    ],
+    "research_position": [],
+    "relevance_score": 15,
+    "screening_decision": "CORE",
+    "screening_reason": "positive: aluminum, alloy, aging, machine learning, neural network",
+    "matched_positive_keywords": [
+      "aluminum",
+      "alloy",
+      "aging",
+      "machine learning",
+      "neural network"
+    ],
+    "matched_negative_keywords": [],
+    "summary_short": "",
+    "manual_status": "core",
+    "manual_notes": "Must-read paper for heat-treatment ML review.",
+    "curation_date": "2026-05-08"
+  },
+  {
+    "paper_id": "18a6adda309b5dba",
+    "title": "Rapid feasibility assessment of components formed through hot stamping: A deep learning approach",
+    "authors": [
+      "Hamid Reza Attar",
+      "Haosu Zhou",
+      "Alistair Foster",
+      "Nan Li"
+    ],
+    "year": 2021,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2104.13199v1",
+    "url": "http://arxiv.org/abs/2104.13199v1",
+    "abstract": "The novel non-isothermal Hot Forming and cold die Quenching (HFQ) process can enable the cost-effective production of complex shaped, high strength aluminium alloy panel components. However, the unfamiliarity of designing for the new process prevents its widescale adoption in industrial settings. Recent research efforts focus on the development of advanced material models for finite element simulations, used to assess the feasibility of new component designs for the HFQ process. However, FE simulations take place late in design processes, require forming process expertise and are unsuitable for early-stage design explorations. To address these limitations, this study presents a novel application of a Convolutional Neural Network (CNN) based surrogate as a means of rapid manufacturing feasibility assessment for components to be formed using the HFQ process. A diverse dataset containing variations in component geometry, blank shapes, and processing parameters, together with corresponding physical fields is generated and used to train the model. The results show that near indistinguishable full field predictions are obtained in real time from the model when compared with HFQ simulations. This technique provides an invaluable tool to aid component design and decision making at the onset of a design process for complex-shaped components formed under HFQ conditions.",
+    "source": "arXiv",
+    "published_date": "2021-04-20T21:40:11Z",
+    "updated_date": "2021-04-20T21:40:11Z",
+    "query_group": "arxiv_advanced",
+    "query": "(ti:aluminium OR abs:aluminium OR ti:aluminum OR abs:aluminum) AND (ti:alloy OR abs:alloy) AND (ti:\"heat treatment\" OR abs:\"heat treatment\" OR ti:ageing OR abs:ageing OR ti:aging OR abs:aging OR ti:precipitation OR abs:precipitation OR ti:quenching OR abs:quenching) AND (ti:\"machine learning\" OR abs:\"machine learning\" OR ti:\"neural network\" OR abs:\"neural network\" OR ti:\"deep learning\" OR abs:\"deep learning\" OR ti:\"surrogate model\" OR abs:\"surrogate model\")",
+    "query_mode": "arxiv_advanced",
+    "query_source_quality": "high",
+    "keywords": [],
+    "alloy_system": [
+      "Aluminium alloy"
+    ],
+    "heat_treatment_process": [
+      "Quenching"
+    ],
+    "property_target": [],
+    "ml_method": [
+      "Neural network"
+    ],
+    "research_position": [],
+    "relevance_score": 14,
+    "screening_decision": "CORE",
+    "screening_reason": "positive: aluminium, alloy, quenching, deep learning, neural network",
+    "matched_positive_keywords": [
+      "aluminium",
+      "alloy",
+      "quenching",
+      "deep learning",
+      "neural network"
+    ],
+    "matched_negative_keywords": [],
+    "summary_short": "",
+    "manual_status": "curated",
+    "manual_notes": "Relevant candidate for process-property modelling.",
+    "curation_date": "2026-05-08"
+  },
+  {
+    "paper_id": "74161ac1a7bcc2d5",
+    "title": "The evolution of precipitate crystal structures in an Al-Mg-Si(-Cu) alloy studied by a combined HAADF-STEM and SPED approach",
+    "authors": [
+      "Jonas K. Sunde",
+      "Calin D. Marioara",
+      "Antonius T. J. van Helvoort",
+      "Randi Holmestad"
+    ],
+    "year": 2018,
+    "venue": "arXiv",
+    "doi": "10.1016/j.matchar.2018.05.031",
+    "arxiv_id": "1805.11910v1",
+    "url": "http://arxiv.org/abs/1805.11910v1",
+    "abstract": "This work presents a detailed investigation into the effect of a low Cu addition (0.01 at.%) on precipitation in an Al-0.80Mg-0.85Si alloy during ageing. The precipitate crystal structures were assessed by scanning transmission electron microscopy combined with a novel scanning precession electron diffraction approach, which includes machine learning. The combination of techniques enabled evaluation of the atomic arrangement within individual precipitates, as well as an improved estimate of precipitate phase fractions at each ageing condition, through analysis of a statistically significant number of precipitates. Based on the obtained results, the total amount of solute atoms locked inside precipitates could be approximated. It was shown that even with a Cu content close to impurity levels, the Al-Mg-Si system precipitation was significantly affected with overageing. The principal change was due to a gradually increasing phase fraction of the Cu-containing Q'-phase, which eventually was seen to dominate the precipitate structures. The structural overtake could be explained based on a continuous formation of the thermally stable Q'-phase, with Cu atomic columns incorporating less Cu than what could potentially be accommodated.",
+    "source": "arXiv",
+    "published_date": "2018-05-30T11:52:12Z",
+    "updated_date": "2018-05-30T11:52:12Z",
+    "query_group": "arxiv_advanced",
+    "query": "(ti:\"Al-Mg-Si\" OR abs:\"Al-Mg-Si\" OR ti:6061 OR abs:6061 OR ti:6082 OR abs:6082 OR ti:6xxx OR abs:6xxx) AND (ti:ageing OR abs:ageing OR ti:aging OR abs:aging OR ti:precipitation OR abs:precipitation) AND (ti:\"machine learning\" OR abs:\"machine learning\" OR ti:\"neural network\" OR abs:\"neural network\")",
+    "query_mode": "arxiv_advanced",
+    "query_source_quality": "high",
+    "keywords": [],
+    "alloy_system": [
+      "Al-Mg-Si"
+    ],
+    "heat_treatment_process": [],
+    "property_target": [],
+    "ml_method": [],
+    "research_position": [],
+    "relevance_score": 12,
+    "screening_decision": "CORE",
+    "screening_reason": "positive: alloy, ageing, precipitation, machine learning",
+    "matched_positive_keywords": [
+      "alloy",
+      "ageing",
+      "precipitation",
+      "machine learning"
+    ],
+    "matched_negative_keywords": [],
+    "summary_short": "",
+    "manual_status": "curated",
+    "manual_notes": "Relevant candidate for process-property modelling.",
+    "curation_date": "2026-05-08"
+  },
+  {
+    "paper_id": "06c2cd6e771ac74b",
+    "title": "Modeling Mechanical Properties of Aluminum Composite Produced Using Stir Casting Method",
+    "authors": [
+      "Muhammad Hayat Jokhio",
+      "Muhammad Ibrahim Panhwer",
+      "Mukhtiar Ali Unar"
+    ],
+    "year": 2016,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "1605.09691v1",
+    "url": "http://arxiv.org/abs/1605.09691v1",
+    "abstract": "ANN (Artificial Neural Networks) modeling methodology was adopted for predicting mechanical properties of aluminum cast composite materials. For this purpose aluminum alloy were developed using conventional foundry method. The composite materials have complex nature which posses the nonlinear relationship among heat treatment, processing parameters, and composition and affects their mechanical properties. These nonlinear relation ships with properties can more efficiently be modeled by ANNs. Neural networks modeling needs sufficient data base consisting of mechanical properties, chemical composition and processing parameters. Such data base is not available for modeling. Therefore, a large range of experimental work was carried out for the development of aluminum composite materials. Alloys containing Cu, Mg and Zn as matrix were reinforced with 1- 15% Al2O3 particles using stir casting method. Alloys composites were cast in a metal mold. More than eighty standard samples were prepared for tensile tests. Sixty samples were given solution treatments at 580oC for half an hour and tempered at 120oC for 24 hours. The samples were characterized to investigate mechanical properties using Scanning Electron Microscope, X-Ray Spectrometer, Optical Metallurgical Microscope, Vickers Hardness, Universal Testing Machine and Abrasive Wear Testing Machine. A MLP (Multilayer Perceptron) feedforward was developed and used for modeling purpose. Training, testing and validation of the model were carried out using back propagation learning algorithm. The modeling results show that an architecture of 14 inputs with 9 hidden neurons and 4 outputs which includes the tensile strength, elongation, hardness and abrasive wear resistance gives reasonably accurate results with an error within the range of 2-7 % in training, testing and validation.",
+    "source": "arXiv",
+    "published_date": "2016-04-02T20:00:05Z",
+    "updated_date": "2016-04-02T20:00:05Z",
+    "query_group": "arxiv_advanced",
+    "query": "(ti:aluminium OR abs:aluminium OR ti:aluminum OR abs:aluminum) AND (ti:alloy OR abs:alloy) AND (ti:\"heat treatment\" OR abs:\"heat treatment\" OR ti:ageing OR abs:ageing OR ti:aging OR abs:aging OR ti:precipitation OR abs:precipitation OR ti:quenching OR abs:quenching) AND (ti:\"machine learning\" OR abs:\"machine learning\" OR ti:\"neural network\" OR abs:\"neural network\" OR ti:\"deep learning\" OR abs:\"deep learning\" OR ti:\"surrogate model\" OR abs:\"surrogate model\")",
+    "query_mode": "arxiv_advanced",
+    "query_source_quality": "high",
+    "keywords": [],
+    "alloy_system": [
+      "Aluminium alloy"
+    ],
+    "heat_treatment_process": [],
+    "property_target": [
+      "Hardness",
+      "Tensile strength",
+      "Ductility"
+    ],
+    "ml_method": [
+      "Neural network"
+    ],
+    "research_position": [],
+    "relevance_score": 9,
+    "screening_decision": "CURATED",
+    "screening_reason": "positive: aluminum, alloy, heat treatment",
+    "matched_positive_keywords": [
+      "aluminum",
+      "alloy",
+      "heat treatment"
+    ],
+    "matched_negative_keywords": [],
+    "summary_short": "",
+    "manual_status": "curated",
+    "manual_notes": "Relevant candidate for process-property modelling.",
+    "curation_date": "2026-05-08"
+  },
+  {
+    "paper_id": "55767c953eb0df1b",
+    "title": "Precipitate-Induced Dynamic Strain Aging and Its Effect on the Strain Rate Sensitivity of Precipitation Hardened Aluminum Alloys",
+    "authors": [
+      "Sahar Choukir",
+      "Derek Warner"
+    ],
+    "year": 2026,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2604.01537v2",
+    "url": "http://arxiv.org/abs/2604.01537v2",
+    "abstract": "We examine precipitate-induced dynamic strain aging in precipitation-hardened Al-Cu alloys by combining atomistic simulations, kinetic Monte Carlo, and analytical rate theory. Atomistic simulations were used to characterize (1) the energetics of nearest neighbour Cu<->Al exchanges at dislocation - precipitate junctions and (2) the subsequent change in obstacle strength. For robustness, the simulations were performed with two distinct interatomic potentials. The resulting catalog of local Cu-Al exchange events was used as input for a kinetic Monte Carlo model of the time-dependent evolution of obstacle strength during dislocation pinning at the precipitate. The predicted strengthening kinetics were then embedded in an analytical dynamic strain aging model to predict the strain-rate sensitivity parameter. On the whole, the modeling predicts a low strain-rate sensitivity across a broad range of intermediate quasi-static strain rates, consistent with experimental observations for precipitate-strengthened alloys. The results therefore identify a mechanistic origin of the low strain-rate sensitivity in precipitation hardened aluminum alloys, emerging directly from the kinetics of dislocation-precipitate interactions when nearest neighbour Cu<->Al exchanges are considered.",
+    "source": "arXiv",
+    "published_date": "2026-04-02T02:17:06Z",
+    "updated_date": "2026-04-07T02:29:13Z",
+    "query_group": "arxiv_advanced",
+    "query": "(ti:aluminium OR abs:aluminium OR ti:aluminum OR abs:aluminum) AND (ti:precipitation OR abs:precipitation OR ti:ageing OR abs:ageing OR ti:aging OR abs:aging) AND (ti:prediction OR abs:prediction OR ti:optimization OR abs:optimization OR ti:optimisation OR abs:optimisation)",
+    "query_mode": "arxiv_advanced",
+    "query_source_quality": "high",
+    "keywords": [],
+    "alloy_system": [
+      "Aluminium alloy",
+      "Al-Cu"
+    ],
+    "heat_treatment_process": [],
+    "property_target": [],
+    "ml_method": [],
+    "research_position": [],
+    "relevance_score": 9,
+    "screening_decision": "CURATED",
+    "screening_reason": "positive: aluminum, aging, precipitation",
+    "matched_positive_keywords": [
+      "aluminum",
+      "aging",
+      "precipitation"
+    ],
+    "matched_negative_keywords": [],
+    "summary_short": "",
+    "manual_status": "curated",
+    "manual_notes": "Relevant candidate for process-property modelling.",
+    "curation_date": "2026-05-08"
+  }
+]

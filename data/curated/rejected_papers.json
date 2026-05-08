@@ -1,1 +1,161 @@
-[]
+[
+  {
+    "paper_id": "7bcb33ec43a98d54",
+    "title": "Corrosion-resistant aluminum alloy design through machine learning combined with high-throughput calculations",
+    "authors": [
+      "Yucheng Ji",
+      "Xiaoqian Fu",
+      "Feng Ding",
+      "Yongtao Xu",
+      "Yang He",
+      "Min Ao",
+      "Fulai Xiao",
+      "Dihao Chen",
+      "Poulumi Dey",
+      "Kui Xiao",
+      "Jingli Ren",
+      "Xiaogang Li",
+      "Chaofang Dong"
+    ],
+    "year": 2023,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2312.15899v1",
+    "url": "http://arxiv.org/abs/2312.15899v1",
+    "abstract": "Efficiently designing lightweight alloys with combined high corrosion resistance and mechanical properties remains an enduring topic in materials engineering. To this end, machine learning (ML) coupled ab-initio calculations is proposed within this study. Due to the inadequate accuracy of conventional stress-strain ML models caused by corrosion factors, a novel reinforcement self-learning ML algorithm (accuracy R2 >0.92) is developed. Then, a strategy that integrates ML models, calculated energetics and mechanical moduli is implemented to optimize the Al alloys. Next, this Computation Designed Corrosion-Resistant Al alloy is fabricated that verified the simulation. The performance (elongation reaches ~30%) is attributed to the H-captured Al-Sc-Cu phases (-1.44 eV H-1) and Cu-modified η/η' precipitation inside the grain boundaries (GBs). The developed Al-Mg-Zn-Cu interatomic potential (energy accuracy 6.50 meV atom-1) proves the cracking resistance of the GB region enhanced by Cu-modification. Conceptually, our strategy is of practical importance for designing new alloys exhibiting corrosion resistance and mechanical properties.",
+    "source": "arXiv",
+    "published_date": "2023-12-26T06:27:01Z",
+    "updated_date": "2023-12-26T06:27:01Z",
+    "query_group": "arxiv_advanced",
+    "query": "(ti:aluminium OR abs:aluminium OR ti:aluminum OR abs:aluminum) AND (ti:alloy OR abs:alloy) AND (ti:\"heat treatment\" OR abs:\"heat treatment\" OR ti:ageing OR abs:ageing OR ti:aging OR abs:aging OR ti:precipitation OR abs:precipitation OR ti:quenching OR abs:quenching) AND (ti:\"machine learning\" OR abs:\"machine learning\" OR ti:\"neural network\" OR abs:\"neural network\" OR ti:\"deep learning\" OR abs:\"deep learning\" OR ti:\"surrogate model\" OR abs:\"surrogate model\")",
+    "query_mode": "arxiv_advanced",
+    "query_source_quality": "high",
+    "keywords": [],
+    "alloy_system": [
+      "Aluminium alloy"
+    ],
+    "heat_treatment_process": [],
+    "property_target": [
+      "Ductility",
+      "Corrosion"
+    ],
+    "ml_method": [],
+    "research_position": [],
+    "relevance_score": 12,
+    "screening_decision": "CORE",
+    "screening_reason": "positive: aluminum, alloy, precipitation, machine learning",
+    "matched_positive_keywords": [
+      "aluminum",
+      "alloy",
+      "precipitation",
+      "machine learning"
+    ],
+    "matched_negative_keywords": [],
+    "summary_short": "",
+    "manual_status": "rejected",
+    "manual_notes": "False positive: not focused on aluminium/light-alloy heat treatment.",
+    "curation_date": "2026-05-08"
+  },
+  {
+    "paper_id": "409b5e7d1c102df7",
+    "title": "Revealing mechanism of pore defect formation in laser directed energy deposition of aluminum alloy via in-situ synchrotron X-ray imaging",
+    "authors": [
+      "Wei Liu",
+      "Yuxiao Li",
+      "Chunxia Yao",
+      "Dongsheng Zhang",
+      "Darui Sun",
+      "Sen Chen",
+      "Yu Wu",
+      "Jun Wang",
+      "Lei Lud",
+      "Sheng-Nian Luo",
+      "Ye Tao",
+      "Bingbing Zhang"
+    ],
+    "year": 2024,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2404.06853v1",
+    "url": "http://arxiv.org/abs/2404.06853v1",
+    "abstract": "Laser metal additive manufacturing technology is capable of producing components with complex geometries and compositions that cannot be realized by conventional manufacturing methods. However, a large number of pores generated during the additive manufacturing process greatly affect the mechanical properties of the additively manufactured parts, and the mechanism of such pore generation has not been revealed by direct observation clearly. Here, we report the mechanism of pore generation in the laser direct energy deposition process as revealed by {\\it in-situ} high-speed high-resolution synchrotron X-ray imaging. We found that dissolution and re-precipitation of external gases and precipitation of metal vapors are the two main mechanisms of pore formation. We further explored the effects of different process parameters on the generation of pores and optimized the process to suppress pore generation. This work provides important insights into the formation of porosity defects during laser metal additive manufacturing, and can provide guidance for related process optimization.",
+    "source": "arXiv",
+    "published_date": "2024-04-10T09:25:56Z",
+    "updated_date": "2024-04-10T09:25:56Z",
+    "query_group": "arxiv_advanced",
+    "query": "(ti:aluminium OR abs:aluminium OR ti:aluminum OR abs:aluminum) AND (ti:precipitation OR abs:precipitation OR ti:ageing OR abs:ageing OR ti:aging OR abs:aging) AND (ti:prediction OR abs:prediction OR ti:optimization OR abs:optimization OR ti:optimisation OR abs:optimisation)",
+    "query_mode": "arxiv_advanced",
+    "query_source_quality": "high",
+    "keywords": [],
+    "alloy_system": [
+      "Aluminium alloy"
+    ],
+    "heat_treatment_process": [],
+    "property_target": [],
+    "ml_method": [],
+    "research_position": [
+      "Process optimisation"
+    ],
+    "relevance_score": 11,
+    "screening_decision": "CURATED",
+    "screening_reason": "positive: aluminum, alloy, precipitation, optimization",
+    "matched_positive_keywords": [
+      "aluminum",
+      "alloy",
+      "precipitation",
+      "optimization"
+    ],
+    "matched_negative_keywords": [],
+    "summary_short": "",
+    "manual_status": "rejected",
+    "manual_notes": "False positive: not focused on aluminium/light-alloy heat treatment.",
+    "curation_date": "2026-05-08"
+  },
+  {
+    "paper_id": "6d5338d8a329a419",
+    "title": "On-the-Fly Machine Learning of Interatomic Potentials for Elastic Property Modeling in Al-Mg-Zr Solid Solutions",
+    "authors": [
+      "Lukas Volkmer",
+      "Leonardo Medrano Sandonas",
+      "Philip Grimm",
+      "Julia Kristin Hufenbach",
+      "Gianaurelio Cuniberti"
+    ],
+    "year": 2025,
+    "venue": "arXiv",
+    "doi": "",
+    "arxiv_id": "2508.06311v1",
+    "url": "http://arxiv.org/abs/2508.06311v1",
+    "abstract": "The development of resilient and lightweight Aluminum alloys is central to advancing structural materials for energy-efficient engineering applications. To address this challenge, in this study, we explore the elastic properties of Al-Mg-Zr solid solutions by integrating advanced machine learning (ML) techniques with quantum-mechanical (QM) atomistic simulations. For this purpose, we develop accurate and transferable machine-learned interatomic potentials (MLIPs) using two complementary approaches: (i) an on-the-fly learning scheme combined with Bayesian linear regression during ab initio molecular dynamics simulations, and (ii) the equivariant neural network architecture MACE. Both MLIPs facilitate the prediction of composition-dependent elastic properties while drastically reducing the computational cost compared to conventional QM methods. Comparison with ultrasonic measurements shows that the deviation between simulation and experiment remains within a few GPa across all Al-Mg-Zr systems investigated. These potentials also enable the systematic exploration of the Al-Mg-Zr solid solution phase space and provide insights into the elastic behavior as a function of alloying element concentration. Hence, our findings demonstrate the reliability and transferability of the parameterized on-the-fly MLIPs, making them valuable for accelerating the design of Al alloys with tailored physicomechanical properties in complex compositional spaces. While the present study focuses on homogeneous phases, it establishes a foundation for future multiscale simulations that include microstructural features such as precipitates and grain boundaries.",
+    "source": "arXiv",
+    "published_date": "2025-08-08T13:37:23Z",
+    "updated_date": "2025-08-08T13:37:23Z",
+    "query_group": "arxiv_advanced",
+    "query": "(ti:aluminium OR abs:aluminium OR ti:aluminum OR abs:aluminum) AND (ti:alloy OR abs:alloy) AND (ti:\"heat treatment\" OR abs:\"heat treatment\" OR ti:ageing OR abs:ageing OR ti:aging OR abs:aging OR ti:precipitation OR abs:precipitation OR ti:quenching OR abs:quenching) AND (ti:\"machine learning\" OR abs:\"machine learning\" OR ti:\"neural network\" OR abs:\"neural network\" OR ti:\"deep learning\" OR abs:\"deep learning\" OR ti:\"surrogate model\" OR abs:\"surrogate model\")",
+    "query_mode": "arxiv_advanced",
+    "query_source_quality": "high",
+    "keywords": [],
+    "alloy_system": [
+      "Aluminium alloy"
+    ],
+    "heat_treatment_process": [],
+    "property_target": [],
+    "ml_method": [
+      "Neural network"
+    ],
+    "research_position": [],
+    "relevance_score": 10,
+    "screening_decision": "CURATED",
+    "screening_reason": "positive: aluminum, machine learning, neural network",
+    "matched_positive_keywords": [
+      "aluminum",
+      "machine learning",
+      "neural network"
+    ],
+    "matched_negative_keywords": [],
+    "summary_short": "",
+    "manual_status": "rejected",
+    "manual_notes": "False positive: not focused on aluminium/light-alloy heat treatment.",
+    "curation_date": "2026-05-08"
+  }
+]
