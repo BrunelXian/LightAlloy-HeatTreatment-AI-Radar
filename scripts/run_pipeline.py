@@ -21,6 +21,7 @@ def main():
         "tag_assigner.py",
         "daily_digest.py",
         "query_quality_report.py",
+        "source_quality_report.py",
     ]
     for step in steps:
         run_step(step)
