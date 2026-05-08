@@ -11,136 +11,78 @@
 
 ## What This Project Is
 
-`LightAlloy-HeatTreatment-AI-Radar` is a continuously evolving intelligence system for tracking, structuring, and reusing research knowledge in AI/ML-assisted heat treatment of light alloys.
+`LightAlloy-HeatTreatment-AI-Radar` is a maintainable literature radar for tracking, screening, curating, and reusing research knowledge in AI/ML-assisted heat treatment of aluminium and light alloys.
 
-It is not just a paper list. The long-term goal is to transform fragmented literature into structured knowledge that supports modelling, process optimisation, and future closed-loop control.
-
-```text
-Papers -> Structured Knowledge -> Modelling -> Optimisation
-```
-
-## Why It Matters
-
-Heat treatment of aluminium and light alloys is industrially important, data-rich, and still heavily dependent on experience-based rules. Meanwhile, AI/ML studies in this area are scattered across materials science, manufacturing, modelling, and control.
-
-This project aims to connect:
-
-- heat-treatment processes
-- alloy systems and microstructure evolution
-- mechanical properties
-- machine learning and physics-informed models
-- optimisation and digital twin workflows
-
-## System Modules
-
-| Module | Purpose |
-| --- | --- |
-| Data pipeline | Collect papers, extract metadata, screen relevance, and store structured records. |
-| Knowledge structuring | Decompose papers into process, material, property, method, and dataset information. |
-| Research outputs | Generate digests, reference notes, review-ready summaries, and curated datasets. |
-| Modelling foundation | Prepare data and baselines for ML, surrogate modelling, and physics-informed learning. |
-| Optimisation layer | Support process optimisation, uncertainty-aware prediction, and future closed-loop control. |
-
-## Knowledge Schema
-
-Each paper is expected to be organized around:
-
-- **Process**: solution treatment, ageing, quenching, deformation, thermomechanical routes
-- **Material**: alloy system, composition, initial condition, processing history
-- **Target**: hardness, strength, elongation, microstructure, precipitation behaviour
-- **Method**: ML model, physics-informed model, surrogate model, optimisation algorithm
-- **Data**: dataset source, feature variables, target variables, evaluation metrics
-
-## Repository Structure
+It is not a static paper list or a PDF storage repository. The goal is to transform scattered literature into structured, review-ready knowledge.
 
 ```text
-LightAlloy-HeatTreatment-AI-Radar/
-  data/
-    raw_papers.json
-    screened_papers.json
-    curated_papers.json
-
-  refs/
-    aluminium_alloys.md
-    heat_treatment_process.md
-    ml_models.md
-    physics_informed_ml.md
-
-  scripts/
-    paper_scanner.py
-    paper_screener.py
-    tag_assigner.py
-    summary_generator.py
-
-  outputs/
-    daily_digest.md
-    weekly_summary.md
-
-  review/
-    outline.md
-    sections/
-
-  README.md
-  README_CN.MD
+Papers -> Structured Knowledge -> Manual Curation -> Review Assets
 ```
 
-## Research Questions
+## Current Phase
 
-1. What has already been solved in heat-treatment ML?
-2. What are the main data bottlenecks in this field?
-3. Where does physics-informed ML outperform pure data-driven ML?
-4. How can reliable surrogate models be built for heat-treatment process-property prediction?
-5. How can uncertainty-aware prediction be introduced?
-6. How can the field move toward process optimisation and closed-loop control?
+The repository currently supports a Phase 1 workflow:
 
-## Roadmap
+- Search arXiv as the primary daily discovery source.
+- Normalize paper metadata into a stable schema.
+- Deduplicate records by DOI first, then normalized title.
+- Screen papers with deterministic keyword rules.
+- Assign material/process/property/model tags.
+- Generate daily digest and query/source quality reports.
+- Export curation candidates for human review.
+- Persist human decisions in curated/rejected JSON assets.
+- Generate paper cards and a core reading queue for literature review work.
+- Run a daily GitHub Actions scan and upload generated runtime outputs as artifacts.
 
-- Build a structured paper collection and screening workflow.
-- Create curated metadata and tagging standards.
-- Generate daily or weekly research digests.
-- Prepare review-ready summaries and reference notes.
-- Build ML-ready datasets for process-property modelling.
-- Explore physics-informed ML and surrogate modelling.
-- Move toward RL-based optimisation and digital twin integration.
+Crossref support exists in the codebase but is disabled by default for daily discovery because it is currently too noisy. It may be reused later for DOI, venue, and publisher metadata enrichment or manual diagnostics.
 
 ## Quick Start
 
 ```bash
 pip install -r requirements.txt
 python scripts/run_pipeline.py
+python scripts/curation_export.py --limit 20
+python scripts/curation_status.py
+python scripts/generate_paper_cards.py
 ```
 
-## Outputs
+## Main Outputs
 
-- `data/raw/raw_papers.json`: raw metadata collected at runtime. arXiv is currently the primary daily discovery source.
-- `data/processed/screened_papers.json`: normalized, deduplicated, scored, screened, and tagged paper records.
-- `outputs/daily_digest.md`: daily literature radar digest grouped by screening decision.
-- `outputs/query_quality_report.md`: query performance report for inspecting retrieval quality.
+Runtime outputs, ignored by git:
 
-## Query Quality
+- `data/raw/raw_papers.json`
+- `data/processed/normalized_papers.json`
+- `data/processed/screened_papers.json`
+- `outputs/daily_digest.md`
+- `outputs/query_quality_report.md`
+- `outputs/source_quality_report.md`
+- `outputs/curation_candidates.md`
+- `outputs/curation_status.md`
 
-CORE and CURATED counts are not forced. If the pipeline returns zero CORE/CURATED papers, that means query precision or source coverage should be improved before changing the screening thresholds.
+Persistent research assets, tracked by git:
 
-Do not weaken thresholds without manual inspection of the retrieved papers.
-
-## Manual Curation
-
-The `screening_decision` field is a deterministic machine screening result, not the final research decision.
-
-Use `manual_status` and `manual_notes` as the human curation layer for final inclusion, exclusion, comments, or review-writing decisions.
+- `data/curated/curated_papers.json`
+- `data/curated/rejected_papers.json`
+- `review/core_reading_queue.md`
+- `review/paper_cards/*.md`
 
 ## Manual Curation Workflow
 
+Machine screening is only a first pass. Human decisions are stored separately.
+
 ```bash
 python scripts/run_pipeline.py
-python scripts/curation_export.py
-python scripts/curation_apply.py --paper-id PAPER_ID --status curated --notes "..."
+python scripts/curation_export.py --limit 20
+python scripts/curation_apply.py --paper-id PAPER_ID --status core --notes "Must-read paper for heat-treatment ML review."
+python scripts/curation_apply.py --paper-id PAPER_ID --status curated --notes "Relevant candidate for process-property modelling."
+python scripts/curation_apply.py --paper-id PAPER_ID --status rejected --notes "False positive: not focused on aluminium/light-alloy heat treatment."
 python scripts/curation_status.py
 ```
 
-`screening_decision` is generated by the rule-based machine screening step. `manual_status` is the human decision layer.
-
-`data/curated/curated_papers.json` is the persistent research asset. `data/curated/rejected_papers.json` keeps reviewed low-value papers out of repeated manual review.
+- `screening_decision` is machine-generated.
+- `manual_status` is the human decision layer.
+- `curated_papers.json` is the persistent reviewed library.
+- `rejected_papers.json` prevents repeated review of low-value papers.
 
 ## Paper Cards and Reading Queue
 
@@ -150,29 +92,70 @@ Curated papers can be converted into reusable review notes:
 python scripts/generate_paper_cards.py
 ```
 
-This generates `review/core_reading_queue.md` and one Markdown card per curated paper under `review/paper_cards/`. The queue lists manual `core` papers before `curated` papers and keeps generated notes deterministic and rule-based.
+This generates:
 
-## Data Versioning Policy
+- `review/core_reading_queue.md`
+- `review/paper_cards/<paper_id>.md`
 
-Raw and processed JSON files are runtime-generated artifacts and are ignored by default.
+Each paper card contains deterministic metadata, tags, screening information, abstract, review placement hints, and a stable `Human Reading Notes` section for manual literature-review notes.
 
-The curated library, especially `data/curated/curated_papers.json`, is the human-reviewed asset. Generated outputs are ignored by default until a GitHub Actions or release policy is defined.
+Existing manual notes in paper cards are preserved when cards are regenerated.
 
 ## Daily Automation
 
-GitHub Actions runs the literature radar scan daily and also supports manual dispatch.
+GitHub Actions runs the daily literature radar scan and also supports manual dispatch.
 
-The workflow uploads runtime outputs as artifacts, including raw metadata, processed records, checkpoints, digests, query quality reports, and curation candidate exports. Generated raw, processed, and output files are not committed automatically.
+The workflow:
 
-Crossref support exists but is disabled by default because it is currently too noisy for daily discovery. It may be reused later for DOI, venue, and publisher metadata enrichment or manual diagnostics.
+- installs dependencies
+- runs the pipeline
+- exports curation candidates
+- generates curation status
+- runs tests
+- uploads runtime outputs as the `literature-radar-output` artifact
 
-Human curation remains manual. `data/curated/curated_papers.json` and `data/curated/rejected_papers.json` are the persistent research assets.
+Generated raw, processed, and output files are not committed automatically. Human curation remains manual.
 
-The manual dispatch workflow has been verified. The `literature-radar-output` artifact includes `outputs/`, `data/raw/`, `data/processed/`, and `data/checkpoints/`.
+## Data Versioning Policy
 
-## Status
+Runtime files are ignored by default:
 
-This repository is under active development. Daily or weekly research updates are planned.
+- `data/raw/*.json`
+- `data/processed/*.json`
+- `data/checkpoints/*.json`
+- `outputs/*.md`
+
+Curated JSON files and review paper cards are the durable research assets.
+
+## Repository Structure
+
+```text
+LightAlloy-HeatTreatment-AI-Radar/
+  config/
+  data/
+    raw/
+    processed/
+    curated/
+    checkpoints/
+  outputs/
+  review/
+    core_reading_queue.md
+    paper_cards/
+  scripts/
+  tests/
+  .github/workflows/
+  README.md
+  README_CN.MD
+```
+
+## Research Questions
+
+1. What has already been solved in heat-treatment ML?
+2. What are the main data bottlenecks?
+3. Where does physics-informed ML outperform pure data-driven ML?
+4. How can reliable surrogate models be built for process-property prediction?
+5. How can uncertainty-aware prediction be introduced?
+6. How can the field move toward optimisation, closed-loop control, and digital twins?
 
 ## Author
 
