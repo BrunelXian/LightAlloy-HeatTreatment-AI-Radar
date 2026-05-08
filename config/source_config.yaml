@@ -1,0 +1,11 @@
+sources:
+  arxiv:
+    enabled: true
+    max_results_per_query: 20
+    delay_seconds: 3.0
+    mode: arxiv_advanced
+  crossref:
+    enabled: true
+    rows_per_query: 20
+    delay_seconds: 1.0
+    mailto: ""

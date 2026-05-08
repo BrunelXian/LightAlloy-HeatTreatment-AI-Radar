@@ -59,23 +59,24 @@ def stable_paper_id(title, year=None, doi=None, arxiv_id=None):
     return hashlib.sha1(key.encode("utf-8")).hexdigest()[:16]
 
 
-def _paper_key(paper):
+def paper_dedupe_key(paper):
     doi = normalize_text(paper.get("doi"))
-    arxiv_id = normalize_text(paper.get("arxiv_id"))
     title = normalize_text(paper.get("title"))
-    year = paper.get("year") or ""
     if doi:
         return f"doi:{doi}"
+    if title:
+        return f"title:{title}"
+    arxiv_id = normalize_text(paper.get("arxiv_id"))
     if arxiv_id:
         return f"arxiv:{arxiv_id}"
-    return f"title:{title}:{year}"
+    return ""
 
 
 def deduplicate_papers(papers):
     deduped = []
     seen = set()
     for paper in papers:
-        key = _paper_key(paper)
+        key = paper_dedupe_key(paper)
         if not key or key in seen:
             continue
         seen.add(key)

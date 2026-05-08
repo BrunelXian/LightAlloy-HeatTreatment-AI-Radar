@@ -7,7 +7,7 @@ from pathlib import Path
 
 import requests
 
-from utils import deduplicate_papers, ensure_dir, load_json, load_yaml, normalize_text, save_json
+from utils import deduplicate_papers, ensure_dir, load_json, load_yaml, paper_dedupe_key, save_json
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -81,7 +81,7 @@ def build_search_query(query, query_mode):
     return f'all:"{query}"'
 
 
-def fetch_query(query, max_results, query_mode):
+def fetch_query(query, max_results, query_mode, retries=3, retry_delay=10):
     params = {
         "search_query": build_search_query(query, query_mode),
         "start": 0,
@@ -89,20 +89,28 @@ def fetch_query(query, max_results, query_mode):
         "sortBy": "submittedDate",
         "sortOrder": "descending",
     }
-    response = requests.get(ARXIV_API_URL, params=params, timeout=30)
-    response.raise_for_status()
-    return response.text
+    for attempt in range(retries + 1):
+        try:
+            response = requests.get(ARXIV_API_URL, params=params, timeout=30)
+            if response.status_code != 429:
+                response.raise_for_status()
+                return response.text
+            reason = "rate limit"
+        except requests.RequestException as exc:
+            response = None
+            reason = exc.__class__.__name__
+
+        if attempt == retries:
+            print(f"WARNING: arXiv query skipped after {reason}: {query[:120]}")
+            return None
+        wait_seconds = retry_delay * (attempt + 1)
+        print(f"arXiv {reason}; retrying in {wait_seconds} seconds...")
+        time.sleep(wait_seconds)
+    raise RuntimeError("unreachable arXiv retry state")
 
 
 def paper_seen_key(paper):
-    doi = normalize_text(paper.get("doi"))
-    arxiv_id = normalize_text(paper.get("arxiv_id"))
-    title = normalize_text(paper.get("title"))
-    if doi:
-        return f"doi:{doi}"
-    if arxiv_id:
-        return f"arxiv:{arxiv_id}"
-    return f"title:{title}"
+    return paper_dedupe_key(paper)
 
 
 def iter_queries(query_config, mode):
@@ -138,6 +146,8 @@ def run(max_results=20, delay_seconds=3.0, mode="arxiv_advanced"):
 
     for query_group, query, query_mode in iter_queries(query_config, mode):
         xml_text = fetch_query(query, max_results=max_results, query_mode=query_mode)
+        if xml_text is None:
+            continue
         papers = parse_arxiv_feed(xml_text, query_group=query_group, query=query, query_mode=query_mode)
         fetched_count += len(papers)
         for paper in papers:

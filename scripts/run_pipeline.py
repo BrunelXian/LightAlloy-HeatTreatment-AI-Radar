@@ -15,6 +15,7 @@ def run_step(script_name):
 def main():
     steps = [
         "paper_scanner.py",
+        "crossref_scanner.py",
         "paper_normalizer.py",
         "paper_screener.py",
         "tag_assigner.py",
