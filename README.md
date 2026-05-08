@@ -148,6 +148,14 @@ Raw and processed JSON files are runtime-generated artifacts and are ignored by 
 
 The curated library, especially `data/curated/curated_papers.json`, is the human-reviewed asset. Generated outputs are ignored by default until a GitHub Actions or release policy is defined.
 
+## Daily Automation
+
+GitHub Actions runs the literature radar scan daily and also supports manual dispatch.
+
+The workflow uploads runtime outputs as artifacts, including raw metadata, processed records, checkpoints, digests, query quality reports, and curation candidate exports. Generated raw, processed, and output files are not committed automatically.
+
+Human curation remains manual. `data/curated/curated_papers.json` and `data/curated/rejected_papers.json` are the persistent research assets.
+
 ## Status
 
 This repository is under active development. Daily or weekly research updates are planned.
