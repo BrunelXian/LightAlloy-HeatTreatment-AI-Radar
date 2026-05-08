@@ -112,7 +112,7 @@ python scripts/run_pipeline.py
 
 ## Outputs
 
-- `data/raw/raw_papers.json`: raw metadata collected from arXiv and Crossref at runtime.
+- `data/raw/raw_papers.json`: raw metadata collected at runtime. arXiv is currently the primary daily discovery source.
 - `data/processed/screened_papers.json`: normalized, deduplicated, scored, screened, and tagged paper records.
 - `outputs/daily_digest.md`: daily literature radar digest grouped by screening decision.
 - `outputs/query_quality_report.md`: query performance report for inspecting retrieval quality.
@@ -152,7 +152,9 @@ The curated library, especially `data/curated/curated_papers.json`, is the human
 
 GitHub Actions runs the literature radar scan daily and also supports manual dispatch.
 
-The workflow uploads runtime outputs as artifacts, including raw metadata from arXiv and Crossref, processed records, checkpoints, digests, query quality reports, and curation candidate exports. Generated raw, processed, and output files are not committed automatically.
+The workflow uploads runtime outputs as artifacts, including raw metadata, processed records, checkpoints, digests, query quality reports, and curation candidate exports. Generated raw, processed, and output files are not committed automatically.
+
+Crossref support exists but is disabled by default because it is currently too noisy for daily discovery. It may be reused later for DOI, venue, and publisher metadata enrichment or manual diagnostics.
 
 Human curation remains manual. `data/curated/curated_papers.json` and `data/curated/rejected_papers.json` are the persistent research assets.
 

@@ -250,7 +250,7 @@ def main():
     parser.add_argument("--delay-seconds", type=float, default=1.0)
     parser.add_argument("--disable", action="store_true")
     args = parser.parse_args()
-    run(rows=args.rows, delay_seconds=args.delay_seconds, enabled=not args.disable)
+    run(rows=args.rows, delay_seconds=args.delay_seconds, enabled=False if args.disable else None)
 
 
 if __name__ == "__main__":
