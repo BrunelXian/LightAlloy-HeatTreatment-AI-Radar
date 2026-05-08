@@ -5,81 +5,145 @@
 [![Scope](https://img.shields.io/badge/scope-processes%2C%20control%2C%20digital%20twin-success)](#)
 [![Status](https://img.shields.io/badge/status-active%20development-orange)](#)
 
-> 面向铝合金与轻合金热处理的 AI/ML 研究雷达与结构化知识系统。
+> 面向铝合金与轻合金热处理 AI/ML 研究的结构化文献雷达。
 
 [English](README.md)
 
 ## 项目定位
 
-`LightAlloy-HeatTreatment-AI-Radar` 是一个持续演化的研究情报系统，用于跟踪、整理和复用轻合金热处理领域中的 AI/ML 研究知识。
+`LightAlloy-HeatTreatment-AI-Radar` 是一个可持续维护的文献雷达系统，用于跟踪、筛选、人工整理和复用铝合金/轻合金热处理领域中的 AI/ML 研究知识。
 
-它不是一个简单的论文列表，也不是 PDF 存储仓库。这个项目的长期目标，是把分散在论文中的研究信息转化为可检索、可建模、可优化的结构化知识。
+它不是静态论文列表，也不是 PDF 仓库。目标是把分散在论文中的信息转化为结构化、可筛选、可人工复核、可用于综述写作的研究资产。
 
 ```text
-论文 -> 结构化知识 -> 建模 -> 优化
+论文 -> 结构化知识 -> 人工筛选 -> 综述素材
 ```
 
-## 为什么做这个项目
+## 当前阶段
 
-铝合金与轻合金热处理在工业中非常重要，数据丰富，但知识结构并不统一，很多工艺设计仍然依赖经验规则。与此同时，AI/ML 相关研究分散在材料、制造、建模和控制等不同方向中，缺少一个统一的整理框架。
+当前仓库已经支持 Phase 1 工作流：
 
-本项目希望连接以下内容：
+- 以 arXiv 作为每日发现的主要来源。
+- 将论文元数据规范化到稳定 schema。
+- 按 DOI 优先、规范化标题其次进行去重。
+- 使用确定性的关键词规则进行机器筛选。
+- 自动分配材料、工艺、性能、模型方法和研究定位标签。
+- 生成 daily digest、query quality report 和 source quality report。
+- 导出候选论文供人工筛选。
+- 将人工决策持久化到 curated/rejected JSON 资产。
+- 生成 paper cards 和 core reading queue，用于综述阅读和面试准备。
+- 使用 GitHub Actions 每日自动扫描，并把运行产物上传为 artifact。
 
-- 热处理工艺参数
-- 合金体系与微观组织演化
-- 力学性能与服役指标
-- 机器学习与物理信息模型
-- 工艺优化与数字孪生流程
+Crossref 支持已经保留在代码中，但默认不参与每日发现，因为当前作为发现源仍然偏噪。后续可以重新用于 DOI、期刊/会议、出版社等元数据补全，或作为手动诊断工具。
 
-## 系统模块
+## 快速开始
 
-| 模块 | 作用 |
-| --- | --- |
-| 数据管线 | 收集论文、提取元数据、筛选相关性，并保存结构化记录。 |
-| 知识结构化 | 将论文拆解为工艺、材料、性能、方法和数据集等信息。 |
-| 研究输出 | 生成研究摘要、参考笔记、综述素材和结构化数据集。 |
-| 建模基础 | 为机器学习、代理模型和物理信息学习准备数据与基线。 |
-| 优化层 | 支持工艺优化、不确定性预测，以及未来闭环控制。 |
+```bash
+pip install -r requirements.txt
+python scripts/run_pipeline.py
+python scripts/curation_export.py --limit 20
+python scripts/curation_status.py
+python scripts/generate_paper_cards.py
+```
 
-## 知识结构
+## 主要输出
 
-每篇论文尽量围绕以下维度整理：
+运行时输出，默认不提交到 git：
 
-- **Process 工艺**：固溶、时效、淬火、变形、热机械处理路线
-- **Material 材料**：合金体系、成分、初始状态、加工历史
-- **Target 目标**：硬度、强度、延伸率、微观组织、析出行为
-- **Method 方法**：机器学习模型、物理信息模型、代理模型、优化算法
-- **Data 数据**：数据来源、输入特征、目标变量、评价指标
+- `data/raw/raw_papers.json`
+- `data/processed/normalized_papers.json`
+- `data/processed/screened_papers.json`
+- `outputs/daily_digest.md`
+- `outputs/query_quality_report.md`
+- `outputs/source_quality_report.md`
+- `outputs/curation_candidates.md`
+- `outputs/curation_status.md`
+
+长期保存的研究资产，会提交到 git：
+
+- `data/curated/curated_papers.json`
+- `data/curated/rejected_papers.json`
+- `review/core_reading_queue.md`
+- `review/paper_cards/*.md`
+
+## 人工筛选流程
+
+机器筛选只是第一步，最终是否进入研究资产由人工决定。
+
+```bash
+python scripts/run_pipeline.py
+python scripts/curation_export.py --limit 20
+python scripts/curation_apply.py --paper-id PAPER_ID --status core --notes "Must-read paper for heat-treatment ML review."
+python scripts/curation_apply.py --paper-id PAPER_ID --status curated --notes "Relevant candidate for process-property modelling."
+python scripts/curation_apply.py --paper-id PAPER_ID --status rejected --notes "False positive: not focused on aluminium/light-alloy heat treatment."
+python scripts/curation_status.py
+```
+
+- `screening_decision` 是机器筛选结果。
+- `manual_status` 是人工决策层。
+- `curated_papers.json` 是人工复核后的文献库。
+- `rejected_papers.json` 用于避免反复审阅低价值误报。
+
+## Paper Cards 与核心阅读队列
+
+已人工筛选的论文可以转换为可复用的阅读笔记：
+
+```bash
+python scripts/generate_paper_cards.py
+```
+
+该命令会生成：
+
+- `review/core_reading_queue.md`
+- `review/paper_cards/<paper_id>.md`
+
+每张 paper card 包含确定性的论文元数据、标签、机器筛选信息、摘要、综述位置建议，以及稳定的 `Human Reading Notes` 人工阅读笔记区。
+
+重新生成 paper cards 时，已有的人工阅读笔记会被保留。
+
+## 每日自动化
+
+GitHub Actions 会每日运行文献雷达扫描，也支持手动触发。
+
+工作流会：
+
+- 安装依赖
+- 运行 pipeline
+- 导出 curation candidates
+- 生成 curation status
+- 运行测试
+- 将运行时输出上传为 `literature-radar-output` artifact
+
+生成的 raw、processed 和 outputs 文件不会自动提交。人工筛选仍然保持手动完成。
+
+## 数据版本策略
+
+以下运行时文件默认忽略：
+
+- `data/raw/*.json`
+- `data/processed/*.json`
+- `data/checkpoints/*.json`
+- `outputs/*.md`
+
+人工 curated JSON 和 review paper cards 是长期保存的研究资产。
 
 ## 仓库结构
 
 ```text
 LightAlloy-HeatTreatment-AI-Radar/
+  config/
   data/
-    raw_papers.json
-    screened_papers.json
-    curated_papers.json
-
-  refs/
-    aluminium_alloys.md
-    heat_treatment_process.md
-    ml_models.md
-    physics_informed_ml.md
-
-  scripts/
-    paper_scanner.py
-    paper_screener.py
-    tag_assigner.py
-    summary_generator.py
-
+    raw/
+    processed/
+    curated/
+    checkpoints/
   outputs/
-    daily_digest.md
-    weekly_summary.md
-
   review/
-    outline.md
-    sections/
-
+    core_reading_queue.md
+    paper_cards/
+  scripts/
+  tests/
+  .github/workflows/
   README.md
   README_CN.MD
 ```
@@ -89,23 +153,9 @@ LightAlloy-HeatTreatment-AI-Radar/
 1. 热处理机器学习目前已经解决了哪些问题？
 2. 这个领域主要的数据瓶颈是什么？
 3. 物理信息机器学习在哪些场景下优于纯数据驱动模型？
-4. 如何建立可靠的热处理工艺-性能预测代理模型？
+4. 如何建立可靠的工艺-性能预测代理模型？
 5. 如何引入不确定性预测？
-6. 如何进一步走向工艺优化和闭环控制？
-
-## 路线图
-
-- 建立论文收集与筛选流程。
-- 建立元数据与标签规范。
-- 生成每日或每周研究简报。
-- 沉淀综述写作素材和参考笔记。
-- 构建面向机器学习的工艺-性能数据集。
-- 探索物理信息机器学习与代理建模。
-- 逐步走向基于强化学习的工艺优化和数字孪生集成。
-
-## 当前状态
-
-项目正在持续开发中，计划进行每日或每周研究更新。
+6. 如何进一步走向工艺优化、闭环控制和数字孪生？
 
 ## 作者
 
