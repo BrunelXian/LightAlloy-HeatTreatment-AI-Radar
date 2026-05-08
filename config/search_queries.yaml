@@ -1,0 +1,34 @@
+arxiv_advanced:
+  - '(ti:aluminium OR abs:aluminium OR ti:aluminum OR abs:aluminum) AND (ti:alloy OR abs:alloy) AND (ti:"heat treatment" OR abs:"heat treatment" OR ti:ageing OR abs:ageing OR ti:aging OR abs:aging OR ti:precipitation OR abs:precipitation OR ti:quenching OR abs:quenching) AND (ti:"machine learning" OR abs:"machine learning" OR ti:"neural network" OR abs:"neural network" OR ti:"deep learning" OR abs:"deep learning" OR ti:"surrogate model" OR abs:"surrogate model")'
+  - '(ti:aluminium OR abs:aluminium OR ti:aluminum OR abs:aluminum) AND (ti:precipitation OR abs:precipitation OR ti:ageing OR abs:ageing OR ti:aging OR abs:aging) AND (ti:prediction OR abs:prediction OR ti:optimization OR abs:optimization OR ti:optimisation OR abs:optimisation)'
+  - '(ti:"Al-Mg-Si" OR abs:"Al-Mg-Si" OR ti:6061 OR abs:6061 OR ti:6082 OR abs:6082 OR ti:6xxx OR abs:6xxx) AND (ti:ageing OR abs:ageing OR ti:aging OR abs:aging OR ti:precipitation OR abs:precipitation) AND (ti:"machine learning" OR abs:"machine learning" OR ti:"neural network" OR abs:"neural network")'
+  - '(ti:"Al-Cu" OR abs:"Al-Cu" OR ti:2024 OR abs:2024 OR ti:2xxx OR abs:2xxx) AND (ti:"heat treatment" OR abs:"heat treatment" OR ti:ageing OR abs:ageing OR ti:aging OR abs:aging) AND (ti:prediction OR abs:prediction OR ti:"machine learning" OR abs:"machine learning")'
+  - '(ti:"Al-Zn-Mg-Cu" OR abs:"Al-Zn-Mg-Cu" OR ti:7075 OR abs:7075 OR ti:7xxx OR abs:7xxx) AND (ti:ageing OR abs:ageing OR ti:aging OR abs:aging OR ti:precipitation OR abs:precipitation) AND (ti:"machine learning" OR abs:"machine learning" OR ti:optimization OR abs:optimization OR ti:optimisation OR abs:optimisation)'
+
+core:
+  - "aluminium alloy heat treatment machine learning"
+  - "aluminum alloy heat treatment machine learning"
+  - "aluminium alloy ageing machine learning"
+  - "aluminum alloy aging machine learning"
+  - "precipitation hardening aluminium alloy machine learning"
+  - "heat treatment optimisation aluminium alloy"
+  - "heat treatment optimization aluminum alloy"
+  - "process microstructure property aluminium alloy machine learning"
+
+physics_informed:
+  - "physics informed machine learning aluminium alloy"
+  - "physics informed neural network heat treatment"
+  - "hybrid physics machine learning precipitation"
+  - "surrogate model heat treatment aluminium alloy"
+
+digital_twin:
+  - "digital twin heat treatment aluminium alloy"
+  - "digital twin materials processing heat treatment"
+  - "closed loop heat treatment optimisation"
+  - "intelligent heat treatment machine learning"
+
+broader_methods:
+  - "materials informatics heat treatment"
+  - "machine learning process microstructure property"
+  - "Bayesian optimisation heat treatment"
+  - "active learning alloy design heat treatment"

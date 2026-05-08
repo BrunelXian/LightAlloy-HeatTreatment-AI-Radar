@@ -103,6 +103,38 @@ LightAlloy-HeatTreatment-AI-Radar/
 - Explore physics-informed ML and surrogate modelling.
 - Move toward RL-based optimisation and digital twin integration.
 
+## Quick Start
+
+```bash
+pip install -r requirements.txt
+python scripts/run_pipeline.py
+```
+
+## Outputs
+
+- `data/raw/raw_papers.json`: raw metadata collected from arXiv at runtime.
+- `data/processed/screened_papers.json`: normalized, deduplicated, scored, screened, and tagged paper records.
+- `outputs/daily_digest.md`: daily literature radar digest grouped by screening decision.
+- `outputs/query_quality_report.md`: query performance report for inspecting retrieval quality.
+
+## Query Quality
+
+CORE and CURATED counts are not forced. If the pipeline returns zero CORE/CURATED papers, that means query precision or source coverage should be improved before changing the screening thresholds.
+
+Do not weaken thresholds without manual inspection of the retrieved papers.
+
+## Manual Curation
+
+The `screening_decision` field is a deterministic machine screening result, not the final research decision.
+
+Use `manual_status` and `manual_notes` as the human curation layer for final inclusion, exclusion, comments, or review-writing decisions.
+
+## Data Versioning Policy
+
+Raw and processed JSON files are runtime-generated artifacts and are ignored by default.
+
+The curated library, especially `data/curated/curated_papers.json`, is the human-reviewed asset. Generated outputs are ignored by default until a GitHub Actions or release policy is defined.
+
 ## Status
 
 This repository is under active development. Daily or weekly research updates are planned.

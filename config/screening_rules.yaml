@@ -1,0 +1,29 @@
+positive_keywords:
+  aluminium: 3
+  aluminum: 3
+  alloy: 2
+  heat treatment: 4
+  ageing: 3
+  aging: 3
+  quenching: 3
+  precipitation: 3
+  machine learning: 4
+  deep learning: 3
+  neural network: 3
+  physics-informed: 4
+  surrogate model: 3
+  optimisation: 3
+  optimization: 3
+  digital twin: 3
+
+negative_keywords:
+  steel: -2
+  concrete: -3
+  polymer: -3
+  image classification only: -3
+
+decision_thresholds:
+  core: 12
+  curated: 8
+  maybe: 5
+  reject: 0

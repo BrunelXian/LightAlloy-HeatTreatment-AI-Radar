@@ -1,0 +1,40 @@
+material:
+  "Aluminium alloy": ["aluminium", "aluminum", "al alloy"]
+  "Al-Mg-Si": ["al-mg-si", "6061", "6082", "6xxx"]
+  "Al-Cu": ["al-cu", "2024", "2xxx"]
+  "Al-Zn-Mg-Cu": ["al-zn-mg-cu", "7075", "7xxx"]
+  "Al-Si": ["al-si", "casting alloy", "a356"]
+
+process:
+  "Solution treatment": ["solution treatment", "solution heat treatment"]
+  "Quenching": ["quenching", "quench"]
+  "Artificial ageing": ["artificial ageing", "artificial aging", "ageing treatment", "aging treatment"]
+  "Natural ageing": ["natural ageing", "natural aging"]
+  "Precipitation hardening": ["precipitation hardening", "precipitation strengthening"]
+  "Annealing": ["annealing", "recovery", "recrystallization"]
+
+property:
+  "Hardness": ["hardness", "microhardness"]
+  "Tensile strength": ["tensile strength", "ultimate tensile strength", "uts"]
+  "Yield strength": ["yield strength"]
+  "Ductility": ["elongation", "ductility"]
+  "Residual stress": ["residual stress"]
+  "Corrosion": ["corrosion"]
+
+ml_method:
+  "Random forest": ["random forest"]
+  "XGBoost": ["xgboost", "gradient boosting"]
+  "Neural network": ["neural network", "deep learning", "ann", "dnn"]
+  "Gaussian process": ["gaussian process", "kriging"]
+  "Bayesian optimisation": ["bayesian optimization", "bayesian optimisation"]
+  "Physics-informed ML": ["physics-informed", "physics informed", "pinn"]
+  "Surrogate model": ["surrogate model", "metamodel"]
+  "Active learning": ["active learning"]
+  "Reinforcement learning": ["reinforcement learning"]
+
+research_position:
+  "Property prediction": ["property prediction", "predict hardness", "predict strength"]
+  "Microstructure prediction": ["microstructure prediction", "precipitation prediction"]
+  "Process optimisation": ["process optimization", "process optimisation", "parameter optimization", "parameter optimisation"]
+  "Digital twin": ["digital twin"]
+  "Closed-loop control": ["closed-loop", "closed loop", "feedback control"]
