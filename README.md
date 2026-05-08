@@ -156,6 +156,8 @@ The workflow uploads runtime outputs as artifacts, including raw metadata, proce
 
 Human curation remains manual. `data/curated/curated_papers.json` and `data/curated/rejected_papers.json` are the persistent research assets.
 
+The manual dispatch workflow has been verified. The `literature-radar-output` artifact includes `outputs/`, `data/raw/`, `data/processed/`, and `data/checkpoints/`.
+
 ## Status
 
 This repository is under active development. Daily or weekly research updates are planned.
