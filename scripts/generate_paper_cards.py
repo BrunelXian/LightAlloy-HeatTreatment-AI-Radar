@@ -7,6 +7,30 @@ from utils import ensure_dir, load_json
 
 ROOT = Path(__file__).resolve().parents[1]
 STATUS_PRIORITY = {"core": 0, "curated": 1}
+HUMAN_NOTES_HEADING = "## Human Reading Notes"
+DEFAULT_HUMAN_NOTES = """## Human Reading Notes
+
+### Key contribution
+<!-- Fill manually -->
+
+### Method / model
+<!-- Fill manually -->
+
+### Dataset / material system
+<!-- Fill manually -->
+
+### Heat-treatment relevance
+<!-- Fill manually -->
+
+### Evidence useful for review
+<!-- Fill manually -->
+
+### Limitations
+<!-- Fill manually -->
+
+### Possible citation sentence
+<!-- Fill manually -->
+"""
 
 
 def list_text(values):
@@ -123,6 +147,20 @@ def paper_card_markdown(paper):
     return "\n".join(lines)
 
 
+def extract_human_notes(existing_markdown):
+    marker_index = existing_markdown.find(HUMAN_NOTES_HEADING)
+    if marker_index == -1:
+        return ""
+    return existing_markdown[marker_index:].strip() + "\n"
+
+
+def merge_card_with_human_notes(new_card, existing_card):
+    existing_notes = extract_human_notes(existing_card or "")
+    human_notes = existing_notes or DEFAULT_HUMAN_NOTES
+    deterministic = new_card.split(HUMAN_NOTES_HEADING, 1)[0].rstrip()
+    return deterministic + "\n\n" + human_notes.rstrip() + "\n"
+
+
 def reading_queue_markdown(records):
     queue = sorted_reading_queue(records)
     lines = [
@@ -162,7 +200,9 @@ def generate_paper_cards(curated_path=None, review_dir=None):
     for paper in queue:
         paper_id = safe_filename(paper.get("paper_id"))
         card_path = paper_cards_dir / f"{paper_id}.md"
-        card_path.write_text(paper_card_markdown(paper), encoding="utf-8")
+        existing_card = card_path.read_text(encoding="utf-8") if card_path.exists() else ""
+        new_card = paper_card_markdown(paper)
+        card_path.write_text(merge_card_with_human_notes(new_card, existing_card), encoding="utf-8")
 
     queue_path = review_dir / "core_reading_queue.md"
     queue_path.write_text(reading_queue_markdown(records), encoding="utf-8")

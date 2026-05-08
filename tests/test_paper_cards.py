@@ -43,7 +43,11 @@ def test_paper_card_generated_for_one_curated_record(tmp_path):
 
     card_path = paper_cards_dir / "paper-1.md"
     assert card_path.exists()
-    assert "Heat treatment ML paper" in card_path.read_text(encoding="utf-8")
+    card = card_path.read_text(encoding="utf-8")
+    assert "Heat treatment ML paper" in card
+    assert "## Human Reading Notes" in card
+    assert "### Key contribution" in card
+    assert "<!-- Fill manually -->" in card
 
 
 def test_core_papers_appear_before_curated_papers_in_queue(tmp_path):
@@ -76,3 +80,51 @@ def test_generated_markdown_includes_metadata_notes_and_tags(tmp_path):
     assert "alloy_system: Aluminium alloy" in card
     assert "heat_treatment_process: Artificial ageing" in card
     assert "ml_method: Neural network" in card
+
+
+def test_existing_human_reading_notes_are_preserved_after_regeneration(tmp_path):
+    curated_path = tmp_path / "curated_papers.json"
+    review_dir = tmp_path / "review"
+    records = [_paper("paper-3", "Original title", "core", 12, 2025)]
+    curated_path.write_text(json.dumps(records), encoding="utf-8")
+    _, paper_cards_dir, _ = generate_paper_cards(curated_path=curated_path, review_dir=review_dir)
+
+    card_path = paper_cards_dir / "paper-3.md"
+    card = card_path.read_text(encoding="utf-8")
+    custom_notes = """## Human Reading Notes
+
+### Key contribution
+Manual synthesis already written.
+
+### Method / model
+Manual method note.
+"""
+    card_path.write_text(card.split("## Human Reading Notes", 1)[0] + custom_notes, encoding="utf-8")
+
+    updated = [_paper("paper-3", "Updated deterministic title", "core", 15, 2026)]
+    curated_path.write_text(json.dumps(updated), encoding="utf-8")
+    generate_paper_cards(curated_path=curated_path, review_dir=review_dir)
+    regenerated = card_path.read_text(encoding="utf-8")
+
+    assert "Updated deterministic title" in regenerated
+    assert "Relevance score: 15" in regenerated
+    assert "Manual synthesis already written." in regenerated
+    assert "Manual method note." in regenerated
+
+
+def test_core_reading_queue_generation_still_works(tmp_path):
+    curated_path = tmp_path / "curated_papers.json"
+    review_dir = tmp_path / "review"
+    records = [
+        _paper("paper-4", "Queue core", "core", 11, 2024),
+        _paper("paper-5", "Queue curated", "curated", 10, 2025),
+    ]
+    curated_path.write_text(json.dumps(records), encoding="utf-8")
+
+    queue_path, _, queue = generate_paper_cards(curated_path=curated_path, review_dir=review_dir)
+
+    assert queue_path.exists()
+    assert len(queue) == 2
+    queue_text = queue_path.read_text(encoding="utf-8")
+    assert "Queue core" in queue_text
+    assert "Queue curated" in queue_text

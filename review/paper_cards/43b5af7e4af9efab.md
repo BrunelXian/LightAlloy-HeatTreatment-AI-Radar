@@ -30,3 +30,26 @@ Differential scanning calorimetry (DSC) is a standard tool for studying precipit
 - Why it matters: Connects heat-treatment knowledge to process optimisation and decision support.
 - Potential review section: Process optimisation and decision support
 - Reading priority: High
+
+## Human Reading Notes
+
+### Key contribution
+<!-- Fill manually -->
+
+### Method / model
+<!-- Fill manually -->
+
+### Dataset / material system
+<!-- Fill manually -->
+
+### Heat-treatment relevance
+<!-- Fill manually -->
+
+### Evidence useful for review
+<!-- Fill manually -->
+
+### Limitations
+<!-- Fill manually -->
+
+### Possible citation sentence
+<!-- Fill manually -->

@@ -30,3 +30,26 @@ The novel non-isothermal Hot Forming and cold die Quenching (HFQ) process can en
 - Why it matters: Provides evidence for process-microstructure-property relationships in light alloys.
 - Potential review section: Heat-treatment process and microstructure evolution
 - Reading priority: High
+
+## Human Reading Notes
+
+### Key contribution
+<!-- Fill manually -->
+
+### Method / model
+<!-- Fill manually -->
+
+### Dataset / material system
+<!-- Fill manually -->
+
+### Heat-treatment relevance
+<!-- Fill manually -->
+
+### Evidence useful for review
+<!-- Fill manually -->
+
+### Limitations
+<!-- Fill manually -->
+
+### Possible citation sentence
+<!-- Fill manually -->
