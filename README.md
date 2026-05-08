@@ -142,6 +142,16 @@ python scripts/curation_status.py
 
 `data/curated/curated_papers.json` is the persistent research asset. `data/curated/rejected_papers.json` keeps reviewed low-value papers out of repeated manual review.
 
+## Paper Cards and Reading Queue
+
+Curated papers can be converted into reusable review notes:
+
+```bash
+python scripts/generate_paper_cards.py
+```
+
+This generates `review/core_reading_queue.md` and one Markdown card per curated paper under `review/paper_cards/`. The queue lists manual `core` papers before `curated` papers and keeps generated notes deterministic and rule-based.
+
 ## Data Versioning Policy
 
 Raw and processed JSON files are runtime-generated artifacts and are ignored by default.
