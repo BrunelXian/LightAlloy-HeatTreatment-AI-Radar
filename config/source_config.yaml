@@ -9,3 +9,23 @@ sources:
     rows_per_query: 20
     delay_seconds: 1.0
     mailto: ""
+    query_mode: high_precision
+    require_precision_filter: true
+
+crossref_queries:
+  high_precision:
+    - '"aluminum alloy" "heat treatment" "machine learning"'
+    - '"aluminium alloy" "heat treatment" "machine learning"'
+    - '"aluminum alloy" aging "machine learning"'
+    - '"aluminium alloy" ageing "machine learning"'
+    - '"Al-Mg-Si" aging "machine learning"'
+    - '"Al-Mg-Si" ageing "machine learning"'
+    - '"6061" aging "machine learning"'
+    - '"6082" ageing "machine learning"'
+    - '"7075" aging "machine learning"'
+    - '"Al-Cu" aging "machine learning"'
+    - '"precipitation hardening" "aluminum alloy" "machine learning"'
+    - '"precipitation hardening" "aluminium alloy" "machine learning"'
+    - '"process-property" "aluminum alloy" "machine learning"'
+    - '"process microstructure property" "aluminum alloy" "machine learning"'
+    - '"surrogate model" "aluminum alloy" "heat treatment"'
